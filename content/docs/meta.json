@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "pages": [
+    "---Introduction---",
+    "index",
+    "what-is-bubbly-maps",
+    "guides",
+    "license",
+    "change-log",
+    "---Functions---",
+    "apis",
+    "modules"
+    
+    
+  ]
+}

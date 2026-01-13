@@ -1,0 +1,270 @@
+---
+title: Change Log
+description: The Bubbly Maps update log
+icon: ScrollText
+---
+
+# V5
+
+### v503
+
+<Callout type="warn" title="Beta Version">
+  This version is a beta of v503 and contains newly released features, expect unfinished features and bugs.
+
+  You can try the beta features on our [development branch](https://github.com/bubblymaps/bubblymaps/tree/v5).
+</Callout>
+
+- Add ``DELETE /api/waypoints/id``
+- Add ``license`` into each fetch request
+- Add ``GET /api/users``
+- Add  ``GET /api/users/id``
+- Optimise onboarding, edit wp, and add wp UI
+
+### v502 (latest)
+
+<Callout title="Latest Version">
+  This is the latest stable version.
+
+  You can download it [here](https://github.com/bubblymaps/bubblymaps/releases/tag/v5.0.2)
+</Callout>
+
+- Moved ``/profile --> /u``
+- Moved ``/waypoint --> /w``
+- Moved ``POST /api/account/edit --> PATCH /api/account`` 
+- Moved ``POST /api/account/upload --> POST /api/account``
+- Add ``success: bool`` JSON field to all API routes along with status codes.
+All routes now follow this structure:
+```json
+{
+  success: bool
+  message: string?
+  error: string?
+} 
+
+Status code: int
+```
+- Clean up API routes with generalised structuring
+- Code infrastructure cleanup
+- Small UI tweaks
+- Add ``isHandleReserved(handle: string)``
+- Add ``isHandleTaken(handle: string, excludeUserId?: string)``
+- Removed ``wpToGeoJson.ts`` script which includes previously deprecated ``waypointsToGeoJSON(waypoints: waypoint[])`` function
+- Removed ``GET /api/meta``: Duplicate function, use ``GET /api`` instead
+- Move ``/ (map) --> /map``
+- Move ``/home --> /``
+- Bump version to ``v5.0.2`` and API to ``v6``
+- Remove ``GET POST DELETE /waypoint/[id]/reviews`` routes in favour of ``GET POST DELETE /api/reviews``
+- Remove query logs from prisma
+- Improve ux on most UI components
+- Add onboarding flow @ ``/onboarding`` with proxy redirects
+- Add about me section to homepage
+- Move verified & moderator documentation to ``docs.bubblymaps.org``
+
+
+```
+Api routes:
+┌  /
+├  /api -> GET
+├  /api/account -> PATCH, POST
+├  /api/reviews -> GET, POST, DELETE
+├  /api/stats -> GET
+├  /api/waypoints -> GET, POST
+├  /api/waypoints/[id] -> GET, PATCH
+└  /api/waypoints/search -> GET
+
+App Routes:
+┌  /legal/privacy
+├  /legal/terms
+├  /login
+├  /manage
+├  /map
+├  /onboarding
+├  /settings
+├  /u/[handle]
+├  /u/bubblymaps
+├  /w/[id]
+├  /w/[id]/edit
+└  /w/add
+```
+
+### v501
+
+* Patch 501: Comply with Google TOS by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/21
+* Sync by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/23
+* Sync by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/24
+* Sync by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/25
+* Patch for v5.0.1 by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/26
+
+**Full Changelog**: https://github.com/bubblymaps/bubblymaps/compare/v5.0.0...v5.0.1
+
+### v500
+
+* Merge v5.0.0 into stable by @linuskang in https://github.com/bubblymaps/maps/pull/19
+
+**Full Changelog**: https://github.com/bubblymaps/maps/commits/v5.0.0
+
+---
+
+# V4
+
+<Callout title="Note">
+    This release was a patch for the previously upcoming changes to ``v5``. See V5 release notes for details.
+</Callout>
+
+https://github.com/bubblymaps/bubblymaps/tree/v4
+
+---
+
+# V3
+
+<Callout type="error" title="Warning">
+    This version has been deprecated and will no longer be receiving updates.
+</Callout>
+
+
+### v302
+
+This is a patch release that protects against: [CVE-2025-55183](https://www.cve.org/CVERecord?id=CVE-2025-55183), [CVE-2025-55184](https://www.cve.org/CVERecord?id=CVE-2025-55184), and [
+CVE-2025-55182](https://www.cve.org/CVERecord?id=CVE-2025-55182)
+
+
+### v301
+
+* Add onboarding flow for new users without username by @Copilot in https://github.com/bubblymaps/maps/pull/15
+
+**Full Changelog**: https://github.com/bubblymaps/maps/compare/v3.0.0...v3.0.1
+
+
+### v300
+
+* Bump js-yaml from 4.1.0 to 4.1.1 by @dependabot[bot] in https://github.com/bubblymaps/maps/pull/3
+* Bump next-auth from 4.24.11 to 4.24.13 by @dependabot[bot] in https://github.com/bubblymaps/maps/pull/2
+* Add CI/CD workflows for automated testing, security scanning, and deployment by @Copilot in https://github.com/bubblymaps/maps/pull/5
+* Update README with project-specific documentation and Docker deployment instructions by @Copilot in https://github.com/bubblymaps/maps/pull/6
+* Potential fix for code scanning alert no. 2: DOM text reinterpreted as HTML by @linuskang in https://github.com/bubblymaps/maps/pull/9
+* Fix TypeScript any types and React component rendering bugs by @Copilot in https://github.com/bubblymaps/maps/pull/10
+* Add workflow_dispatch trigger for manual Docker builds by @Copilot in https://github.com/bubblymaps/maps/pull/11
+* Add comprehensive API documentation for all routes by @Copilot in https://github.com/bubblymaps/maps/pull/12
+
+**Full Changelog**: https://github.com/bubblymaps/maps/commits/v3.0.0
+
+---
+
+# V2
+
+<Callout type="error" title="Warning">
+    This version has been deprecated and will no longer be receiving updates.
+</Callout>
+
+### v200
+
+- Cleanup entire codebase.
+- Add API routes.
+- Revamp all app UIs.
+
+Update is available at our V2 branch: https://github.com/bubblymaps/bubblymaps/tree/v2
+
+---
+
+# V1
+
+<Callout title="Codebase Location">
+    The codebase for the initial V1 app isn't in ``bubblymaps/bubblymaps``.
+
+    The previous repository containing V1 is at https://github.com/linuskang/bubbly.
+</Callout>
+
+<Callout type="error" title="Warning">
+    This version has been deprecated and will no longer be receiving updates.
+</Callout>
+
+### v171
+
+https://github.com/linuskang/bubbly/compare/v1.7.0...v1.7.1
+
+### v170
+
+- Bump next from 15.5.2 to 15.5.3 in /App by @dependabot[bot] in #19
+- Bump @types/react from 19.1.12 to 19.1.13 in /App by @dependabot[bot] in #18
+- Bump swagger-ui-react from 5.28.1 to 5.29.0 in /App by @dependabot[bot] in #17
+- Bump lucide-react from 0.543.0 to 0.544.0 in /App by @dependabot[bot] in #16
+- Bump nodemailer from 6.10.1 to 7.0.6 in /App by @dependabot[bot] in #15
+
+https://github.com/linuskang/bubbly/compare/v1.6.22...v1.7.0
+
+### v164
+
+- Bump axios from 1.11.0 to 1.12.0 in /App by @dependabot[bot] in #14
+
+https://github.com/linuskang/bubbly/releases/tag/v1.6.22
+
+### v163
+
+https://github.com/linuskang/bubbly/compare/v1.6.2...v1.6.21
+
+### v162
+
+https://github.com/linuskang/bubbly/compare/v1.6.1...v1.6.2
+
+### v161
+
+https://github.com/linuskang/bubbly/compare/v1.6.0...v1.6.1
+
+### v160
+
+- Bump actions/checkout from 4 to 5 by @dependabot[bot] in #13
+- Bump tw-animate-css from 1.3.6 to 1.3.8 in /App by @dependabot[bot] in #12
+- Bump docker/build-push-action from 5 to 6 by @dependabot[bot] in #11
+- Bump resend from 6.0.2 to 6.0.3 in /App by @dependabot[bot] in #10
+- Bump maplibre-gl from 5.6.2 to 5.7.1 in /App by @dependabot[bot] in #9
+- Bump @types/node from 20.19.10 to 24.3.1 in /App by @dependabot[bot] in #7
+- Bump lucide-react from 0.539.0 to 0.542.0 in /App by @dependabot[bot] in #8
+
+https://github.com/linuskang/bubbly/compare/v1.5.4...v1.6.0
+
+### v154
+
+https://github.com/linuskang/bubbly/compare/v1.5.3...v1.5.4
+
+### v153
+
+- Potential fix for code scanning alert no. 8: Missing rate limiting by @linuskang in #6
+- This update covers all the core feature addons such as AI chatting, and major UI upgrades.
+
+https://github.com/linuskang/bubbly/compare/v1.5.2...v1.5.3
+
+### v152
+
+https://github.com/linuskang/bubbly/compare/v1.5.1...v1.5.2
+
+### v151
+
+- Bump react-dom and @types/react-dom in /App by @dependabot[bot] in #5
+- Bump react and @types/react in /App by @dependabot[bot] in #4
+- Bump next from 15.4.6 to 15.5.2 in /App by @dependabot[bot] in #2
+- Bump prisma from 6.13.0 to 6.15.0 in /App by @dependabot[bot] in #1
+- Bump @tailwindcss/postcss from 4.1.11 to 4.1.12 in /App by @dependabot[bot] in #3
+
+https://github.com/linuskang/bubbly/compare/v1.5.0...v1.5.1
+
+### v150
+
+- Fixed docker build where NEXT_PUBLIC tileserver urls wont render
+
+https://github.com/linuskang/bubbly/compare/v1.4.7...v1.5.0
+
+### v147
+
+https://github.com/linuskang/bubbly/compare/v1.4.6...v1.4.7
+
+### v146
+
+https://github.com/linuskang/bubbly/compare/v1.4.5...v1.4.6
+
+### v100
+
+- Initial publish of Bubbly
+
+https://github.com/linuskang/bubbly.
+
+---

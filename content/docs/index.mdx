@@ -1,0 +1,59 @@
+---
+title: Quick Start
+description: Getting started with Bubbly Maps locally
+icon: Rocket
+---
+
+# Introduction
+
+Bubbly Maps <span className='text-fd-muted-foreground text-sm'>(Bub-blee Maps)</span> is a **water fountain mapping app**, designed to be fast, flexible, and packed with quality features.
+
+You can access the official Bubbly Maps public instance [here](https://bubblymaps.org).
+
+## Self-hosting
+
+This guide will teach you how to self host the platform. This will allow you to map your own water fountain dataset on a map.
+
+<Callout title="Prerequisites">
+  Before you begin, make sure you have the following installed:
+
+- [**Docker Engine & Compose**](https://docs.docker.com/engine/install)
+- [**Git SCM**](https://git-scm.com)
+- [**NodeJS 22+**](https://nodejs.org )
+</Callout>
+
+### Installing Bubbly Maps
+
+Next, execute the following commands in your terminal.
+
+```bash
+git clone https://github.com/bubblymaps/bubblymaps
+cd bubblymaps
+```
+
+2. Edit `docker-compose.yml` with your environment variables.
+3. Start Bubbly Maps:
+
+```bash
+docker compose up --build
+```
+
+You can now access your hosted instance at port ``2000``.
+
+## Next Steps
+
+<Cards>
+
+<Card title='Adding Waypoints' href='/docs/guides/adding-waypoints'>
+
+Learn how to use our administrator panel to add waypoints into your hosted instance.
+
+</Card>
+
+<Card title='API Reference' href='/docs/apis'>
+
+Learn about the Bubbly Maps APIs to integrate it into your own projects
+
+</Card>
+
+</Cards>

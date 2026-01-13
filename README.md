@@ -1,11 +1,11 @@
-# Bubbly Maps: Documentation
+# Documentation
 
 Access the docs at https://docs.bubblymaps.org
 
-# Contributing
+## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING)
 
-# License
+## License
 
 See [LICENSE](LICENSE)

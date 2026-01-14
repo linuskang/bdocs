@@ -19,6 +19,24 @@ icon: ScrollText
 - Add ``GET /api/users``
 - Add  ``GET /api/users/id``
 - Optimise onboarding, edit wp, and add wp UI
+- Add ``DELETE /api/waypoints/id``
+- Add ``license`` into each fetch request
+- Add ``GET /api/users``
+- Add  ``GET /api/users/id``
+- Add bounding boxes to map, along with 3 new endpoints:
+``GET /api/boundingboxes``
+``POST /api/boundingboxes``
+``DELETE /api/boundingboxes``
+
+Along with these endpoints, we are introducing 5 functions in a new ``BoundingBoxes`` library:
+```ts
+BoundingBoxes.getAll(activeOnly: boolean = true)
+BoundingBoxes.getById(id: number)
+BoundingBoxes.create(data: BoundingBoxData)
+BoundingBoxes.update(id: number, data: BoundingBoxUpdateData)
+BoundingBoxes.delete(id: number)
+```
+For moderators, there is a new ``Bounding Boxes`` tab in the moderator panel for you to create, edit, and delete different zones. These edits are all logged to your discord webhook.
 
 ### v502 (latest)
 

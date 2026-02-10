@@ -8,17 +8,10 @@ icon: ScrollText
 
 ### v503
 
-<Callout type="warn" title="Beta Version">
-  This version is a beta of v503 and contains newly released features, expect unfinished features and bugs.
-
-  You can try the beta features on our [development branch](https://github.com/bubblymaps/bubblymaps/tree/v5).
+<Callout title="Latest Version">
+  This is the latest stable version.
 </Callout>
 
-- Add ``DELETE /api/waypoints/id``
-- Add ``license`` into each fetch request
-- Add ``GET /api/users``
-- Add  ``GET /api/users/id``
-- Optimise onboarding, edit wp, and add wp UI
 - Add ``DELETE /api/waypoints/id``
 - Add ``license`` into each fetch request
 - Add ``GET /api/users``
@@ -27,7 +20,6 @@ icon: ScrollText
 ``GET /api/boundingboxes``
 ``POST /api/boundingboxes``
 ``DELETE /api/boundingboxes``
-
 Along with these endpoints, we are introducing 5 functions in a new ``BoundingBoxes`` library:
 ```ts
 BoundingBoxes.getAll(activeOnly: boolean = true)
@@ -37,16 +29,27 @@ BoundingBoxes.update(id: number, data: BoundingBoxUpdateData)
 BoundingBoxes.delete(id: number)
 ```
 For moderators, there is a new ``Bounding Boxes`` tab in the moderator panel for you to create, edit, and delete different zones. These edits are all logged to your discord webhook.
+- Add the following new endpoints:
+```
+GET /api/openapi
+GET /api/docs
+```
+- Implement full swagger UI documentation @ ``api/docs``
 
-- Mobile android app powered by Expo.
+* Sync for Patch 503 by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/28
+* Patch S3 and TileServer URLS by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/29
+* Patch 502-3 by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/30
+* Add tests by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/31
+* Feat: Bounding Boxes by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/32
+* Bump lodash from 4.17.21 to 4.17.23 by @dependabot[bot] in https://github.com/bubblymaps/bubblymaps/pull/33
+* Bump next from 16.0.10 to 16.1.5 by @dependabot[bot] in https://github.com/bubblymaps/bubblymaps/pull/34
+* Release 503 by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/35
+* patch for dependencies by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/36
+* fix2 by @linuskang in https://github.com/bubblymaps/bubblymaps/pull/37
 
-### v502 (latest)
+**Full Changelog**: https://github.com/bubblymaps/bubblymaps/compare/v5.0.2...v5.0.3
 
-<Callout title="Latest Version">
-  This is the latest stable version.
-
-  You can download it [here](https://github.com/bubblymaps/bubblymaps/releases/tag/v5.0.2)
-</Callout>
+### v502
 
 - Moved ``/profile --> /u``
 - Moved ``/waypoint --> /w``
